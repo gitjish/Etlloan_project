@@ -2,7 +2,7 @@ from pyspark.sql.functions import *
 import pyinputplus as pyip
 
 def show_report(df_sp_cc_cust, zip, yr, mm):
-    print("inside the function", zip, yr, mm)
+    print(f"You have entered Zip : {zip},Year : {yr},Month : {mm}")
     data = df_sp_cc_cust.select('TRANSACTION_ID','transaction_type', \
                                 'transaction_value', 'Date').where((df_sp_cc_cust['CUST_ZIP'] == zip) \
                                 & (substring(df_sp_cc_cust['TIMEID'],1,4) == str(yr)) \
@@ -17,21 +17,10 @@ def show_report2(df_sp_cc,ttype):
 
 #Display result for 2.1(2)2.1(3) 
 def show_report3(df_sp_cc_br, state):
-    print("Transaction details of state", state)
+    print("Transaction details of state", state.upper())
     data3 = df_sp_cc_br.select('Branch_code','transaction_value').where( df_sp_cc_br['BRANCH_STATE']== state).groupby('branch_code')\
     .agg(count('branch_code').alias("COUNT"),round(sum('transaction_value'),2).alias("TRANSACTION_VALUE")).show()
 
-# def trans_by_branch(state):
-#     data1 = sp.sql("SELECT bc1, COUNT(bc1), \
-#                 round(SUM(transaction_value),2) \
-#                 FROM data_br_view \
-#                 WHERE BRANCH_STATE == '{}' \
-#                 GROUP BY bc1 \
-#                 ORDER BY bc1".format(state))
-#     data1.show()
-
-# state = str(input("Enter State : "))
-#trans_by_branch(state)   
 
 def validate_ttype(ttype, list_ttype):
     if ttype.capitalize() in list_ttype:
@@ -79,9 +68,10 @@ def test_call(df_sp_cc_cust):
 #2.1(2)Display the number and total values of transaction for a given type  
 def test_call2(df_sp_cc,list_ttype):
     while True:
+        print(list_ttype)
         ttype = pyip.inputStr("Enter Transaction type (0 to Exit) : ")
         if validate_ttype(ttype, list_ttype):
-            print("--------------------------\n Transaction Type - {}".format(ttype))
+            print("--------------------------\nTransaction Type - {}".format(ttype))
             show_report2(df_sp_cc,ttype)
         else:    
             if ttype == '0':
@@ -93,7 +83,7 @@ def test_call3(df_sp_cc_br,list_state):
     while True:
         state = pyip.inputStr("Enter State (0 to Exit) : ")
         if validate_state(state, list_state):
-            print("--------------------------\n State - {}".format(state))
+            print("--------------------------\nState - {}".format(state.upper()))
             show_report3(df_sp_cc_br,state)
         else:    
             if state == '0':
@@ -101,16 +91,3 @@ def test_call3(df_sp_cc_br,list_state):
         
             continue
                 
-        
-    # while True:
-    #     var_ssn = pyip.inputInt("Enter 9-digit SSN (0 to Exit) : ")
-        
-    #     if validate_ssn(var_ssn, list_ssn):
-    #         var_start_dt = pyip.inputDate("Enter Start Date in (YYYY/MM/DD) format : ")
-    #         var_end_dt = pyip.inputDate("Enter End Date in (YYYYMMDD) format : ")
-    #         print("--------------------------\n SSN - *****{}\n Start Date - {}\n End Date - {}".format(str(var_ssn)[5:], var_start_dt, var_end_dt))
-    #         show_info(df_sp_cc_cust, var_ssn, var_start_dt, var_end_dt)
-    #     else:
-    #         if var_ssn == 0:
-    #             break
-    #         continue
