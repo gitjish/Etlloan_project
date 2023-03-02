@@ -63,13 +63,16 @@ Banks want to automate the loan eligibility process (in real-time) based on cust
 
 ## 3.Load Transformed datasets, to Database(MariaDB).
 
- Created a Database in SQL(MariaDB), named “creditcard_capstone.”
+ Database in SQL(MariaDB)---> “creditcard_capstone.”
  
- Created a Python and Pyspark Program to load/write the “Credit Card System Data”  and "Loan API Data" into RDBMS(creditcard_capstone).
+ Python and Pyspark Program to load/write the Datasetss into RDBMS(creditcard_capstone).
  
   • CDW_SAPP_BRANCH
+  
   • CDW_SAPP_CREDIT_CARD
+  
   • CDW_SAPP_CUSTOMER 
+  
   • CDW_SAPP_LOAN_APPLICATION
   
 ## 4.Application Front-End to see/display Data.
@@ -116,18 +119,26 @@ Banks want to automate the loan eligibility process (in real-time) based on cust
  
  ### Find and plot the percentage of applications approved for self-employed applicants.
  
+ ![self_employment](https://user-images.githubusercontent.com/115896761/222339943-fb98487e-9dc0-47f8-be29-487a54260726.png)
+ 
  ## Find the percentage of rejection for married male applicants.
  ![married_male_rejection](https://user-images.githubusercontent.com/115896761/222331206-50dd9d8f-8ad2-4ab5-8167-9284931a7ba1.png)
 
  ## Find and plot the top three months with the largest transaction data.
  
- ![self_employment](https://user-images.githubusercontent.com/115896761/222339943-fb98487e-9dc0-47f8-be29-487a54260726.png)
+ ![top3_month_line](https://user-images.githubusercontent.com/115896761/222343243-48f81fd4-ffb5-4357-865a-2c4b20014f58.png)
 
+ 
  ## Find and plot which branch processed the highest total dollar value of healthcare transactions.
  
  ![Top_healthcare](https://user-images.githubusercontent.com/115896761/222340045-212b248d-2bfb-4b0d-bd9a-f7739f26e6e1.png)
  
 We did  identify the customer segments to those who are eligible for loan amounts so that they can specifically target these customers.
+
+# Tableau Dashbord
+
+![Tableau_dashbord](https://user-images.githubusercontent.com/115896761/222343394-02bb01a9-82b0-4e12-a8d0-15decb713172.png)
+
 
 # References:
 
