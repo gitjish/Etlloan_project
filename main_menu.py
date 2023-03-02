@@ -15,6 +15,8 @@ import module22_4
 import mod3_analysis
 import mod5visualization
 import pymysql
+#import warnings
+#warnings.filterwarnings("ignore")
 # Creating Spark Session
 sp = SparkSession.builder.appName("ETL_PROJECT").getOrCreate()
 # Fetching entire customer data to spark dataframe
@@ -140,7 +142,7 @@ list_main_menu = ["Transactions made by customers by Zipcode",
                   "Modify the existing account details of a customer",
                   "Generate a monthly bill for a credit card number for a given month and year",
                   "Display the transactions made by a customer between two dates",
-                  "Credit Analysis",
+                  "Credit Data Analysis and Visualization",
                   "Loan Data Visualization",
                   "Exit"]
 list_analysis_menu = ["Plot Total transactions by Type",
@@ -172,7 +174,7 @@ while True:
         module22_3.test_call3(df_sp_cc, list_cc)
     elif selection == "Total number and total values of transactions for branches in a given state":
         module21_1.test_call3(df_sp_cc_br, list_state)
-    elif selection == "Credit Analysis":
+    elif selection == "Credit Data Analysis and Visualization":
         while True:
             select_analysis = pyip.inputMenu(list_analysis_menu, numbered=True)  
             print(select_analysis)
