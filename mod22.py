@@ -82,7 +82,7 @@ def update_cust_details(df_sp_cust,list_ssn):
             
         elif var_option == "CUST_PHONE": 
             print(f"Existing value : {pd_result.loc[0,'CUST_PHONE']}")
-            var_phone = pyip.inputInt("Enter new PHONE IN 10 digit xxxxxxxxxx or 0 : ")
+            var_phone = pyip.inputInt("Enter new PHONE IN 10 digit xxxxxxxxxx (0 to Exit) : ")
             if var_phone == 0:
                 continue
             elif len(str(var_phone)) != 10:
@@ -111,7 +111,7 @@ def update_cust_details(df_sp_cust,list_ssn):
             
         elif var_option == "CUST_ZIP": 
             print(f"Existing value : {pd_result.loc[0,'CUST_ZIP']}")
-            var_zip = pyip.inputInt("Enter new ZIPCODE or enter 0: ")
+            var_zip = pyip.inputInt("Enter new ZIPCODE (0 to Exit): ")
             if var_zip == 0:
                 continue
             elif len(str(var_zip)) not in range(4,6):
