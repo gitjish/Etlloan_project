@@ -6,7 +6,8 @@ def show_self_employed(pd_loan1):
     colors_list = ['lightskyblue', 'gold']
     explode_list = [0.1, 0] # ratio for each continent with which to offset each wedge.
     pd_loan1['Percent'] = pd_loan1['Percent'].astype('float')
-    pd_loan1['Percent'].plot(kind='pie',
+    pd_loan1.rename(columns = {'Percent':'Approval on SelfEmployment'}, inplace = True)
+    pd_loan1['Approval on SelfEmployment'].plot(kind='pie',
                                 figsize=(10, 6),
                                 autopct='%1.1f%%', 
                                 startangle=90,    
@@ -44,9 +45,9 @@ def show_male_applicants(pd_loan2):
     # add legend
     plt.legend(labels=pd_loan2["application_status"], loc='upper left') 
     plt.show()  
-
 def show_top3_months(pd_loan3):   
-    pd_loan3.plot(kind='line',x='Month', y='Transaction_value',marker='o',color='red',figsize=(10,6))
+    #pd_loan3.plot(kind='bar',x='Month', y='Transaction_value',marker='o',color='red',figsize=(10,6))
+    pd_loan3.plot(kind='bar',x='Month', y='Transaction_value',color='red',figsize=(10,6))
     plt.title('Top 3 Months Transactions')
     plt.ylabel('Total Transaction')
     plt.xlabel('Month')
