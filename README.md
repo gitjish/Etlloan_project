@@ -49,18 +49,11 @@ Banks want to automate the loan eligibility process (in real-time) based on cust
 
   Many rows were not formatted for various columns; we had to do some manipulations for those to use them in our MySQL database tables.
   
-  Transformed Credit card data schema
+  eg:Transformed Credit card data schema
   
   ![credit_data_schema](https://user-images.githubusercontent.com/115896761/222330372-98d261f1-eb42-4320-95b4-732f0511d18c.png)
   
-  Transformed Customer data schema
-  
-  ![customer_schema](https://user-images.githubusercontent.com/115896761/222330734-0c583589-f5f7-4f4d-8398-a952249e5871.png)
-  
-  Transformed Branch data schema
-  
-  ![branch_schema](https://user-images.githubusercontent.com/115896761/222330800-be185dce-f16f-4b9a-b391-f6f26205e416.png)
-
+ 
 ## 3.Load Transformed datasets, to Database(MariaDB).
 
  Database in SQL(MariaDB)---> “creditcard_capstone.”
@@ -77,29 +70,11 @@ Banks want to automate the loan eligibility process (in real-time) based on cust
   
 ## 4.Application Front-End to see/display Data.
 
+![menudisplay](https://user-images.githubusercontent.com/115896761/222466898-dee5a06a-800c-4ed8-8d11-2a4007e0f421.png)
+
  • Display the transactions made by customers living in a given zip code for a given month and year. Order by day in descending order.
  
- ![211](https://user-images.githubusercontent.com/115896761/222340180-bf96266d-bbac-46cb-b0dc-e21044c4baf0.png)
-
- • Display the number and total values of transactions for a given type.
- 
- ![212](https://user-images.githubusercontent.com/115896761/222340248-60895fc9-11cf-4e6d-9c83-2ef45ffe9948.png)
-
- • Display the total number and total values of transactions for branches in a given state.
- 
- ![213_state](https://user-images.githubusercontent.com/115896761/222340339-e23b201a-783c-430d-b1d9-dcaed9309bb6.png)
-
- • Check the existing account details of a customer.
-
- • Modify the existing account details of a customer.
-
- • Generate a monthly bill for a credit card number for a given month and year.
- 
- ![223_bill](https://user-images.githubusercontent.com/115896761/222340403-5674f20d-7938-42fc-b9b4-b513117905ef.png)
-
- • Display the transactions made by a customer between two dates. Order by year, month, and day in descending order.
-
-![transbetween2dates](https://user-images.githubusercontent.com/115896761/222341278-b7bdd240-60f3-4a8e-b5d8-8cfb736da56f.png)
+ eg: ![211](https://user-images.githubusercontent.com/115896761/222340180-bf96266d-bbac-46cb-b0dc-e21044c4baf0.png)
 
 ## 5.Data analysis and Visualization
 
@@ -122,12 +97,12 @@ Banks want to automate the loan eligibility process (in real-time) based on cust
  ![self_employment](https://user-images.githubusercontent.com/115896761/222339943-fb98487e-9dc0-47f8-be29-487a54260726.png)
  
  ## Find the percentage of rejection for married male applicants.
+
  ![married_male_rejection](https://user-images.githubusercontent.com/115896761/222331206-50dd9d8f-8ad2-4ab5-8167-9284931a7ba1.png)
 
  ## Find and plot the top three months with the largest transaction data.
  
- ![top3_month_line](https://user-images.githubusercontent.com/115896761/222343243-48f81fd4-ffb5-4357-865a-2c4b20014f58.png)
-
+ ![top3_month](https://user-images.githubusercontent.com/115896761/222466680-76913279-a59e-4451-9d1d-6d7cf7ae6e9a.png
  
  ## Find and plot which branch processed the highest total dollar value of healthcare transactions.
  
